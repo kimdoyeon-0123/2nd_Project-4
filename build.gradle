@@ -1,0 +1,56 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.0'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'java'
+}
+
+group = 'com.fullstack.springboot'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot 의존성
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-logging'
+
+    // Lombok (코드 간소화)
+    implementation 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    // Retrofit2 (HTTP 요청)
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // Jakarta Persistence 및 기타 유틸리티
+    implementation 'jakarta.persistence:jakarta.persistence-api:2.2.3'
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'org.slf4j:slf4j-api:2.0.0'
+    implementation 'org.slf4j:slf4j-simple:2.0.0'
+
+    // JUnit 4
+    testImplementation 'junit:junit:4.13.2'
+
+    // JUnit 5
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    // JUnit 4를 JUnit 5에서 실행하기 위한 Vintage Engine
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.7.0'
+
+    // Spring Boot 테스트
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // MySQL 의존성
+    implementation 'mysql:mysql-connector-java:8.0.28' // 필요한 버전으로 수정
+    
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+}
+
+test {
+    useJUnitPlatform()
+}
